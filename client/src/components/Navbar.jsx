@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { assets } from '../assets/assets';
+import { assets } from "../assets/assets";
 import { useClerk, useUser, UserButton } from "@clerk/clerk-react";
 import { useEffect } from "react";
 
@@ -41,14 +41,13 @@ const Navbar = () => {
   const location = useLocation();
 
   useEffect(() => {
-
-    if (location.pathname !== '/') {
-        setIsScrolled(true);
-        return;
-    }else{
-        setIsScrolled(false);
+    if (location.pathname !== "/") {
+      setIsScrolled(true);
+      return;
+    } else {
+      setIsScrolled(false);
     }
-    setIsScrolled(prev => location.pathname !== '/' ? true : prev);
+    setIsScrolled((prev) => (location.pathname !== "/" ? true : prev));
 
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 10);
@@ -66,10 +65,7 @@ const Navbar = () => {
       }`}
     >
       {/* Logo */}
-      <Link
-        to="/"
-        className="flex items-center gap-2"
-      >
+      <Link to="/" className="flex items-center gap-2">
         <img
           src={assets.logo}
           alt="logo"
@@ -78,15 +74,17 @@ const Navbar = () => {
       </Link>
 
       {/* Desktop Nav */}
-      <div className="hidden md:flex items-center gap-4 lg:gap-8">
+      <div
+        className={`hidden md:flex items-center gap-4 lg:gap-8 px-6 py-2 rounded-full transition-all duration-300
+    ${
+      isScrolled
+        ? "  text-gray-800"
+        : "backdrop-blur-md bg-white/10 border border-white/5 text-white"
+    }
+  `}
+      >
         {navLinks.map((link, i) => (
-          <Link
-            key={i}
-            to={link.path}
-            className={`group flex flex-col gap-0.5 ${
-              isScrolled ? "text-gray-700" : "text-white"
-            }`}
-          >
+          <Link key={i} to={link.path} className="group flex flex-col gap-0.5">
             {link.name}
             <div
               className={`${
@@ -95,10 +93,16 @@ const Navbar = () => {
             />
           </Link>
         ))}
+
         <button
-          className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer ${
-            isScrolled ? "text-black" : "text-white"
-          } transition-all`} onClick={() => navigate ('/owner')}
+          className={`border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all
+      ${
+        isScrolled
+          ? "text-gray-800 border-gray-300 hover:bg-gray-100"
+          : "text-white border-white/60 hover:bg-white/20"
+      }
+    `}
+          onClick={() => navigate("/owner")}
         >
           Dashboard
         </button>
@@ -109,7 +113,9 @@ const Navbar = () => {
         <img
           src={assets.searchIcon}
           alt="search"
-          className={`${isScrolled && "invert"} h-7 transition-all duration-500`}
+          className={`${
+            isScrolled && "invert"
+          } h-7 transition-all duration-500`}
         />
 
         {user ? (
@@ -135,34 +141,33 @@ const Navbar = () => {
       </div>
 
       {/* Mobile Menu Button */}
-<div className="flex items-center gap-3 md:hidden">
-  {user ? (
-    <UserButton>
-      <UserButton.MenuItems>
-        <UserButton.Action
-          label="My Booking"
-          labelIcon={<BookIcon />}
-          onClick={() => navigate("/my-bookings")}
+      <div className="flex items-center gap-3 md:hidden">
+        {user ? (
+          <UserButton>
+            <UserButton.MenuItems>
+              <UserButton.Action
+                label="My Booking"
+                labelIcon={<BookIcon />}
+                onClick={() => navigate("/my-bookings")}
+              />
+            </UserButton.MenuItems>
+          </UserButton>
+        ) : (
+          <button
+            onClick={openSignIn}
+            className="bg-black text-white px-4 py-2 rounded-full"
+          >
+            Login
+          </button>
+        )}
+
+        <img
+          onClick={() => setIsMenuOpen(!isMenuOpen)}
+          src={assets.menuIcon}
+          alt="menu"
+          className={`${isScrolled && "invert"} h-4`}
         />
-      </UserButton.MenuItems>
-    </UserButton>
-  ) : (
-    <button
-      onClick={openSignIn}
-      className="bg-black text-white px-4 py-2 rounded-full"
-    >
-      Login
-    </button>
-  )}
-
-  <img
-    onClick={() => setIsMenuOpen(!isMenuOpen)}
-    src={assets.menuIcon}
-    alt="menu"
-    className={`${isScrolled && "invert"} h-4`}
-  />
-</div>
-
+      </div>
 
       {/* Mobile Menu */}
       <div
@@ -178,21 +183,22 @@ const Navbar = () => {
         </button>
 
         {navLinks.map((link, i) => (
-          <Link
-            key={i}
-            to={link.path}
-            onClick={() => setIsMenuOpen(false)}
-          >
+          <Link key={i} to={link.path} onClick={() => setIsMenuOpen(false)}>
             {link.name}
           </Link>
         ))}
 
-        {user && <button className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all" onClick={() => navigate ('/owner')}>
-          Dashboard
-        </button>}
+        {user && (
+          <button
+            className="border px-4 py-1 text-sm font-light rounded-full cursor-pointer transition-all"
+            onClick={() => navigate("/owner")}
+          >
+            Dashboard
+          </button>
+        )}
 
-        
-          {!user && <button
+        {!user && (
+          <button
             onClick={() => {
               openSignIn();
               setIsMenuOpen(false);
@@ -201,7 +207,7 @@ const Navbar = () => {
           >
             Login
           </button>
-        }
+        )}
       </div>
     </nav>
   );
