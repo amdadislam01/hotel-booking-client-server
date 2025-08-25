@@ -43,3 +43,8 @@ hotel-booking-client-server/
 │   └── ...
 │
 └── README.md
+
+1️⃣ Clone the Repository
+git clone https://github.com/amdadislam01/hotel-booking-client-server.git
+cd hotel-booking-client-server
+
