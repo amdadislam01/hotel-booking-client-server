@@ -113,7 +113,7 @@ export const testimonials = [
     name: "Riyaz Akhonda",
     address: "Kushtia, Bangladesh",
     image:
-      "https://scontent.fdac22-1.fna.fbcdn.net/v/t39.30808-6/492201196_651274174453974_6884588557934738098_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=103&ccb=1-7&_nc_sid=a5f93a&_nc_eui2=AeGLNEaPiS2d-9Er_ngJv6WzRGJzpw6oMipEYnOnDqgyKtrzn_VZH5BpvdW7aMfGJuiRIX4Hu5lH9WqGeFzeNuOt&_nc_ohc=hb7pZ6X9GuAQ7kNvwHGgnmd&_nc_oc=AdkP_HDpfOmKl5396lT49ZcTrtanvwXcqPPmKT3nimG_3BBww6auchTpgCElWZpfiwY&_nc_zt=23&_nc_ht=scontent.fdac22-1.fna&_nc_gid=FaolZx84mThPlqc_foLUSQ&oh=00_AfWeEKEBP3zFoO4tGy_i4Zzk1qmMuELejqWTi2gV07BXWw&oe=68B0AE00",
+      "https://ik.imagekit.io/szqjng5ej/Md%20Riayz%20Akondo/1746021230584.jpg?updatedAt=1756040695400",
     rating: 5,
     review:
       "Amazing service! I always find the best luxury accommodations through QuickStay. Their recommendations never disappoint!",
