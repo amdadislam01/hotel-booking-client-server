@@ -13,8 +13,10 @@
     "@clerk/clerk-react": "^5.43.1",
     "@clerk/nextjs": "^6.31.4",
     "@tailwindcss/vite": "^4.1.12",
+    "axios": "^1.11.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "react-hot-toast": "^2.6.0",
     "react-router-dom": "^7.8.2",
     "tailwindcss": "^4.1.12"
   },
