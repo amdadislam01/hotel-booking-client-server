@@ -22,7 +22,7 @@ It allows users to explore hotels, view details, book rooms, and manage reservat
 ## 🛠️ Technologies Used
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs,express,mongodb,git" alt="Tech Stack" width="500"/>
+  <img src="https://skillicons.dev/icons?i=react,vite,tailwind,nodejs,express,mongodb,git,github" alt="Tech Stack" width="500"/>
 </p>
 
 ---
