@@ -1,4 +1,4 @@
-# 🏨 Hotel Booking Client-Serve
+# 🏨 Hotel Booking Client-Server
 
 A **full-stack hotel booking application** built with **React (Vite)** for the client and **Node.js + Express + MongoDB** for the server.  
 It allows users to explore hotels, view details, book rooms, and manage reservations in a seamless and user-friendly experience.
